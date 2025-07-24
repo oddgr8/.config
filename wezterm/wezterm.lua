@@ -1,0 +1,1 @@
+/Users/onkard@nexthop.ai/config/.wezterm.lua
