@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices.
 config.font = wezterm.font("GeistMono Nerd Font")
-config.font_size = 20
+config.font_size = 12
 config.background = {
 	{
 		source = { Color = "black" },
@@ -24,6 +24,11 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+
+if jit and jit.os == "OSX" then
+	-- Running on macOS
+	config.native_macos_fullscreen_mode = true
+end
 
 -- Finally, return the configuration to wezterm:
 return config
