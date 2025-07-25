@@ -1,25 +1,11 @@
-# What?
+All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os/macos/), [wezterm](https://wezfurlong.org/wezterm/), [lazyvim](https://www.lazyvim.org) and [tmux](https://github.com/tmux/tmux/wiki).
 
-A repo to store all my config/dot files. Also contains instructions and some reasoning.
-Mostly inspired by [this playlist](https://www.youtube.com/watch?v=o4X8GU7CCSU&list=PLnu5gT9QrFg36OehOdECFvxFFeMHhb_07&pp=iAQB).
-If you've everything installed, cloning this in `$HOME` should be enough to get running.
-
-# Why?
-
-So that I can setup my devices easily.
-
-# How?
-
-I started with [regolith](https://regolith-linux.org/) based on [i3](https://i3wm.org/). Stopped using that when I shifted to Mac. Now I use [wezterm](https://wezfurlong.org/wezterm/) with [lazyvim](https://www.lazyvim.org) and [tmux](https://github.com/tmux/tmux/wiki).
-
-## MacOS setup
+## MacOS
 
 - System Settings > Desktop and Dock >
   - Disable "Show recent applications in dock"
   - Enable "Automatically hide and show the Dock"
   - Disable "Automatically rearrange spaces based on most recent use"
-- Install Karabiner to modify caps lock key like [this](https://dannyguo.medium.com/remap-caps-lock-to-escape-and-control-774576c135e6#:~:text=script%20on%20startup.-,Mac,-I%20use%20Karabiner).
-  Press alone for escape and with other keys for control
 - Install homebrew
   ```
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -32,6 +18,13 @@ I started with [regolith](https://regolith-linux.org/) based on [i3](https://i3w
   ```
   git clone https://github.com/oddgr8/.config.git ~/.config
   ```
+- Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and set it to default.
+- Let all tools find the config directory correctly by putting this in your `.zshenv`
+  ```
+  export XDG_CONFIG_HOME=~/.config
+  export POWERLEVEL9K_CONFIG_FILE=$HOME/.config/zsh/.p10k.zsh
+  ```
+- Install and enable [Karabiner](https://karabiner-elements.pqrs.org). Caps lock is now Escape when pressed alone and Control when pressed with other keys.
 
 ## Terminal emulator setup
 
@@ -41,11 +34,6 @@ I started with [regolith](https://regolith-linux.org/) based on [i3](https://i3w
 
 ## Shell setup
 
-- Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) if not already present
-- Set zsh as the default shell
-  ```
-  chsh -s $(which zsh)
-  ```
 - Install [oh-my-zsh](https://ohmyz.sh/)
   ```
   sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
@@ -60,10 +48,10 @@ I started with [regolith](https://regolith-linux.org/) based on [i3](https://i3w
   # Load theme, plugins and aliases
   source $HOME/.config/zsh/.zshrc
   ```
-- Install [tmux](https://github.com/tmux/tmux/wiki), [zsh](https://zsh.sourceforge.io), [make](https://www.gnu.org/software/make/manual/make.html), [pip](https://pypi.org/project/pip/) [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/), [zoxide](https://github.com/ajeetdsouza/zoxide) and [fzf](https://junegunn.github.io/fzf/)
+- Install [tmux](https://github.com/tmux/tmux/wiki), [zsh](https://zsh.sourceforge.io), [make](https://www.gnu.org/software/make/manual/make.html), [pip](https://pypi.org/project/pip/) [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/), [zoxide](https://github.com/ajeetdsouza/zoxide), [fzf](https://junegunn.github.io/fzf/) and [delta](https://github.com/dandavison/delta)
   ```
-  brew install tmux make curl wget zoxide fzf# macos
-  apt install build-essential tmux make curl wget zoxide fzf# ubuntu
+  brew install tmux make curl wget zoxide fzf git-delta# macos
+  apt install build-essential tmux make curl wget zoxide fzf git-delta# ubuntu
   ```
 - Install [rust](https://www.rust-lang.org)
   ```
@@ -82,10 +70,6 @@ I started with [regolith](https://regolith-linux.org/) based on [i3](https://i3w
   git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
   git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
   ```
-- Make sure correct powerlevel10k config is picked by adding this to your `.zshenv`
-  ```
-  export POWERLEVEL9K_CONFIG_FILE=$HOME/.config/zsh/.p10k.zsh
-  ```
 - Restart Terminal
 
 ## Tmux
@@ -99,14 +83,13 @@ I started with [regolith](https://regolith-linux.org/) based on [i3](https://i3w
   ```
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ```
-- Install plugins mentioned in `.tmux.conf` automatically by pressing `Ctrl+A I` inside tmux
+- Finish setup by pressing `Ctrl+A I` inside tmux. Might take a few seconds to take effect.
 
 ## Lazyvim
 
-- Install all requirements of [Lazygit](https://www.lazyvim.org)
+- Install [Lazygit](https://www.lazyvim.org)
 - Config should automatically be loaded from the repo
-- Run `:LazyHealth` inside `nvim` to see if you want to add any more packages.
 
 ## Version Managers
 
-- You probably want to install the following version managers for the usual suspects: [nvm](https://github.com/nvm-sh/nvm), [gvm](https://github.com/moovweb/gvm), [uv](https://github.com/astral-sh/uv)
+- You probably want to install the following version managers for the usual suspects: [nvm](https://github.com/nvm-sh/nvm), [gvm](https://github.com/moovweb/gvm), [uv](https://github.com/astral-sh/uv) and [pyenv](https://github.com/pyenv/pyenv)
