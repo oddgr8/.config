@@ -114,7 +114,7 @@ fi
 export HISTSIZE=100000
 export SAVEHIST=100000
 
-alias ls="lsd -lah"
+alias ls="lsd"
 eval "$(zoxide init zsh)"
 # The following alias interferes with Go version manager redefining cd as a function.
 # Better to just use z directly
