@@ -82,7 +82,7 @@ I started with [regolith](https://regolith-linux.org/) based on [i3](https://i3w
   ```
 - Make sure correct powerlevel10k config is picked by adding this to your `.zshenv`
   ```
-  export POWERLEVEL9K_CONFIG_FILE=$HOME/.config/.p10k.zsh
+  export POWERLEVEL9K_CONFIG_FILE=$HOME/.config/zsh/.p10k.zsh
   ```
 - Restart Terminal
 
