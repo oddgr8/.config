@@ -1,7 +1,8 @@
 # What?
 
 A repo to store all my config/dot files. Also contains instructions and some reasoning.
-Mostly inspired by [this playlist](https://www.youtube.com/watch?v=o4X8GU7CCSU&list=PLnu5gT9QrFg36OehOdECFvxFFeMHhb_07&pp=iAQB)
+Mostly inspired by [this playlist](https://www.youtube.com/watch?v=o4X8GU7CCSU&list=PLnu5gT9QrFg36OehOdECFvxFFeMHhb_07&pp=iAQB).
+If you've everything installed, cloning this in `$HOME` should be enough to get running.
 
 # Why?
 
@@ -29,7 +30,7 @@ I started with [regolith](https://regolith-linux.org/) based on [i3](https://i3w
   ```
 - Clone this repo locally in `~/.config`. You might want to backup existing configs
   ```
-  git clone https://github.com/oddgr8/config.git ~/.config
+  git clone https://github.com/oddgr8/.config.git ~/.config
   ```
 
 ## Terminal emulator setup
