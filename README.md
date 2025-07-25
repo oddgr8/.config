@@ -12,7 +12,7 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   ```
 - Install the font
   ```
-  brew install --cask font-geist font-geist-mono font-geist-mono-nerd-font
+  brew install font-fira-code
   ```
 - Clone this repo locally in `~/.config`. You might want to backup existing configs
   ```
