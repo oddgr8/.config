@@ -50,7 +50,7 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   ```
 - Install [tmux](https://github.com/tmux/tmux/wiki), [zsh](https://zsh.sourceforge.io), [make](https://www.gnu.org/software/make/manual/make.html), [pip](https://pypi.org/project/pip/) [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/), [zoxide](https://github.com/ajeetdsouza/zoxide), [fzf](https://junegunn.github.io/fzf/) and [delta](https://github.com/dandavison/delta)
   ```
-  brew install tmux make curl wget zoxide fzf git-delta# macos
+  brew install tmux make curl wget zoxide fzf git-delta
   ```
 - Install [rust](https://www.rust-lang.org)
   ```
