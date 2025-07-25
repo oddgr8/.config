@@ -56,6 +56,7 @@ I started with [regolith](https://regolith-linux.org/) based on [i3](https://i3w
   ```
 - Instead, add this to the top of your `zshrc`. This might cause some warnings but they should resolve once you install all further packages.
   ```
+  # Load theme, plugins and aliases
   source $HOME/.config/zsh/.zshrc
   ```
 - Install [tmux](https://github.com/tmux/tmux/wiki), [zsh](https://zsh.sourceforge.io), [make](https://www.gnu.org/software/make/manual/make.html), [pip](https://pypi.org/project/pip/) [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/), [zoxide](https://github.com/ajeetdsouza/zoxide) and [fzf](https://junegunn.github.io/fzf/)

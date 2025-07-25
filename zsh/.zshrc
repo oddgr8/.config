@@ -126,5 +126,5 @@ alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 
 zvm_after_init_commands+=('source <(fzf --zsh)')
 
 # To customize prompt, run `p10k configure` or edit ~/.config/.p10k.zsh.
-[[ ! -f ~/.config/.p10k.zsh ]] || source ~/.config/.p10k.zsh
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
