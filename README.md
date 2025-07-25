@@ -22,7 +22,7 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
 - Let all tools find the config directory correctly by putting this in your `.zshenv`
   ```
   export XDG_CONFIG_HOME=~/.config
-  export POWERLEVEL9K_CONFIG_FILE=$HOME/.config/zsh/.p10k.zsh
+  export POWERLEVEL9K_CONFIG_FILE=$HOME/.config/zsh/p10k.zsh
   ```
 - Install and enable [Karabiner](https://karabiner-elements.pqrs.org). Caps lock is now Escape when pressed alone and Control when pressed with other keys.
 
@@ -46,7 +46,7 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
 - Instead, add this to the top of your `zshrc`. This might cause some warnings but they should resolve once you install all further packages.
   ```
   # Load theme, plugins and aliases
-  source $HOME/.config/zsh/.zshrc
+  source $HOME/.config/zsh/zshrc
   ```
 - Install [tmux](https://github.com/tmux/tmux/wiki), [zsh](https://zsh.sourceforge.io), [make](https://www.gnu.org/software/make/manual/make.html), [pip](https://pypi.org/project/pip/) [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/), [zoxide](https://github.com/ajeetdsouza/zoxide), [fzf](https://junegunn.github.io/fzf/) and [delta](https://github.com/dandavison/delta)
   ```
