@@ -91,4 +91,4 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
 
 ## Version Managers
 
-- You probably want to install the following version managers for the usual suspects: [nvm](https://github.com/nvm-sh/nvm), [gvm](https://github.com/moovweb/gvm), [uv](https://github.com/astral-sh/uv) and [pyenv](https://github.com/pyenv/pyenv)
+- You probably want to install version managers for the usual suspects: [nvm](https://github.com/nvm-sh/nvm), [gvm](https://github.com/moovweb/gvm), [uv](https://github.com/astral-sh/uv) and [pyenv](https://github.com/pyenv/pyenv)
