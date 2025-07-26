@@ -7,23 +7,30 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   - Enable "Automatically hide and show the Dock"
   - Disable "Automatically rearrange spaces based on most recent use"
 - Install homebrew
+
   ```
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   ```
+
 - Install the font
+
   ```
   brew install font-fira-code
   ```
+
 - Clone this repo locally in `~/.config`. You might want to backup existing configs
+
   ```
   git clone https://github.com/oddgr8/.config.git ~/.config
   ```
+
 - Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and set it to default.
-- Let all tools find the config directory correctly by putting this in your `.zshenv`
+- Add this to `~/.zshenv`
+
   ```
-  export XDG_CONFIG_HOME=~/.config
-  export POWERLEVEL9K_CONFIG_FILE=$HOME/.config/zsh/p10k.zsh
+  export XDG_CONFIG_HOME=$HOME/.config
   ```
+
 - Install and enable [Karabiner](https://karabiner-elements.pqrs.org). Caps lock is now Escape when pressed alone and Control when pressed with other keys.
 
 ## Terminal emulator setup
@@ -31,36 +38,48 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
 - Install and run [wezterm](https://wezfurlong.org/wezterm/)
 - Config should automatically be loaded from the repo
 
-
 ## Shell setup
 
 - Install [oh-my-zsh](https://ohmyz.sh/)
+
   ```
   sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
   ```
+
 - This probably modified your `.zshrc` file. Revert it
+
   ```
   cp .zshrc.pre-oh-my-zsh .zshrc
   rm .zshrc.pre-oh-my-zsh
   ```
+
 - Instead, add this to the top of your `zshrc`. This might cause some warnings but they should resolve once you install all further packages.
+
   ```
   # Load theme, plugins and aliases
   source $HOME/.config/zsh/zshrc
   ```
+
 - Install [tmux](https://github.com/tmux/tmux/wiki), [zsh](https://zsh.sourceforge.io), [make](https://www.gnu.org/software/make/manual/make.html), [pip](https://pypi.org/project/pip/) [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/), [zoxide](https://github.com/ajeetdsouza/zoxide), [fzf](https://junegunn.github.io/fzf/), [delta](https://github.com/dandavison/delta) and [bat](https://github.com/sharkdp/bat)
+
   ```
   brew install tmux make curl wget zoxide fzf git-delta bat
   ```
+
 - Install [rust](https://www.rust-lang.org)
+
   ```
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
+
 - Install [lsd](https://github.com/lsd-rs/lsd), [ripgrep](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd)
+
   ```
   cargo install lsd ripgrep fd-find
   ```
+
 - Install [powerlevel10k](https://github.com/romkatv/powerlevel10k) and zsh plugins.
+
   ```
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -69,19 +88,24 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
   git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
   ```
+
 - Restart Terminal
 
 ## Tmux
 
 - Install [tmux](https://github.com/tmux/tmux/wiki)
+
   ```
   brew install tmux
   ```
+
 - Config should automatically be loaded from the repo
 - Install [TPM](https://github.com/tmux-plugins/tpm)
+
   ```
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ```
+
 - Finish setup by pressing `Ctrl+A I` inside tmux. Might take a few seconds to take effect.
 
 ## Lazyvim
