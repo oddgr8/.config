@@ -1,5 +1,5 @@
 [include]
-    path = themes.gitconfig
+    path = catppuccin.gitconfig
 [core]
     pager = delta
 [interactive]
@@ -9,5 +9,6 @@
     line-numbers = true
     hyperlinks = true
     side-by-side = true
+    features = catppuccin-mocha
 [merge]
     conflictstyle = zdiff3

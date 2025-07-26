@@ -24,6 +24,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+config.color_scheme = "Catppuccin Mocha"
 
 if jit and jit.os == "OSX" then
 	-- Running on macOS
