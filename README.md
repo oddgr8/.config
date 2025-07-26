@@ -25,11 +25,20 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   ```
 
 - Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and set it to default.
-- Add this to `~/.zshenv`
+- Add this to `~/.zshenv`.
 
   ```
   export XDG_CONFIG_HOME=$HOME/.config
   ```
+
+  **Reminder**: `.zshenv` _always_ runs first. That means in shells, sub-shells, tmux, nvim, everything. Only put things needed everywhere. Like XDG variables.
+  **Reminder**: `.zprofile` runs on login shells. This means every time you manually open a terminal. That's it. Not in sub-shells, not in tmux, not in nvim, nowhere. This is where you want to manipulate `$PATH`. That `$PATH` will get inherited by all subshells and subprocesses, just as it should be. If you prepend to `$PATH` in `.zshrc`, it will re-run on every sub-shell. This means tmux, nvim and subprocesses can end up running different executables than its parent. You _don't_ want that. Also, here's the typical `$PATH` you will need so it's a good idea to put this in your `.zprofile` right now.
+
+  ```
+  export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH 
+  ```
+
+  **Reminder**: `.zshrc` runs on every interactive shell. This means tmux, nvim and even subprocesses. Only do things that affect interaction here, like setting up prompt or colors.
 
 - Install and enable [Karabiner](https://karabiner-elements.pqrs.org). Caps lock is now Escape when pressed alone and Control when pressed with other keys.
 

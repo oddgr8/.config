@@ -7,8 +7,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Set typical $PATH
-export PATH=/opt/homebrew/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# Another reminder to manipulate $PATH in .zprofile and not here.
+# See README for why.
 
 # Directory containing this file
 SRC_DIR=${${(%):-%x}:A:h}
