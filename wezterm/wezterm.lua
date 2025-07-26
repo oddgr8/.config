@@ -26,10 +26,7 @@ config.window_padding = {
 }
 config.color_scheme = "Catppuccin Mocha"
 
-if jit and jit.os == "OSX" then
-	-- Running on macOS
-	config.native_macos_fullscreen_mode = true
-end
+config.native_macos_fullscreen_mode = true
 
 -- Finally, return the configuration to wezterm:
 return config
