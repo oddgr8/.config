@@ -115,17 +115,16 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 
 alias ls="lsd"
-eval "$(zoxide init zsh)"
+
 # The following alias interferes with Go version manager redefining cd as a function.
 # Better to just use z directly
 # alias cd=z
+eval "$(zoxide init zsh)"
 
-alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
-
-# zsh-vi-mode overwrites some keybindings so this fixes that
 zvm_after_init_commands+=('source <(fzf --zsh)')
 
 # To customize prompt, run `p10k configure` or edit ~/.config/p10k.zsh.
-[[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
+[[ ! -f $XDG_CONFIG_HOME/zsh/p10k.zsh ]] || source $XDG_CONFIG_HOME/zsh/p10k.zsh
 
+# Set theme for zsh fast-syntax-highlighting
 fast-theme -q XDG:catppuccin-mocha
