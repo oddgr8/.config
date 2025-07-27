@@ -32,7 +32,7 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   ```
 
   **Reminder**:
-  - `.zshenv`: Runs in *all* shells.
+  - `.zshenv`: Runs _first_ in *all* shells. Set base variable here, like [XDG Base Variables](https://specifications.freedesktop.org/basedir-spec/latest/)
   - `.zshrc`: Runs in *interactive* shells. These are shells you can type commands into.
   - `.zprofile`: : Runs in *login* shells. These are shells in _new_ terminals.
   Set `PATH` in `.zprofile`, **not** `.zshrc`, to avoid inconsistencies between parent and child shells. Typical entry you want in `.zprofile`:
