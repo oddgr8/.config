@@ -122,7 +122,7 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
 
 ## Lazyvim
 
-- Install [Lazygit](https://www.lazyvim.org)
+- Install [Lazyvim](https://www.lazyvim.org)
 - Config should automatically be loaded from the repo
 
 ## Version Managers
