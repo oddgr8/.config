@@ -88,7 +88,7 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   cargo install --locked lsd ripgrep zoxide fd-find git-delta@0.18.2 bat@0.24.0
   ```
   
-  You might have to run `bat cache --clean && bat cache --build` for everything to work properly
+  You might have to run `bat cache --clear && bat cache --build` for everything to work properly
 
 - Install [powerlevel10k](https://github.com/romkatv/powerlevel10k) and zsh plugins.
 
