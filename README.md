@@ -124,7 +124,3 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
 
 - Install [Lazyvim](https://www.lazyvim.org)
 - Config should automatically be loaded from the repo
-
-## Version Managers
-
-- You probably want to install version managers for the usual suspects: [nvm](https://github.com/nvm-sh/nvm), [gvm](https://github.com/moovweb/gvm), [uv](https://github.com/astral-sh/uv) and [pyenv](https://github.com/pyenv/pyenv)
