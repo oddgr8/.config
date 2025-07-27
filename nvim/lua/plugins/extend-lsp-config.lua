@@ -1,4 +1,3 @@
--- In your LazyVim config (e.g., in a file under lua/plugins/)
 return {
   "neovim/nvim-lspconfig",
   opts = {
