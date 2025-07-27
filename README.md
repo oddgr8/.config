@@ -31,7 +31,11 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   export XDG_CONFIG_HOME=$HOME/.config
   ```
 
-  **Reminder**: `.zshenv` runs on every shell. `.zshrc` runs on every interactive shell. `.zprofile` runs on every login shell. Manipulate path variables here. Here's a typical path set here
+  **Reminder**:
+  - `.zshenv`: Runs in *all* shells.
+  - `.zshrc`: Runs in *interactive* shells. These are shells you can type commands into.
+  - `.zprofile`: : Runs in *login* shells. These are shells in _new_ terminals.
+  Set `PATH` in `.zprofile`, **not** `.zshrc`, to avoid inconsistencies between parent and child shells. Typical entry you want in `.zprofile`:
 
   ```
   export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH 
