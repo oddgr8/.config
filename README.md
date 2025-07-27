@@ -25,7 +25,7 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   ```
 
 - Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and set it to default.
-- Add this to `~/.zshenv`.
+- Add this to `~/.zshenv` so configs are picked up correctly.
 
   ```
   export XDG_CONFIG_HOME=$HOME/.config
