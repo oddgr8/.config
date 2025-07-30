@@ -12,7 +12,7 @@ return {
     },
   },
   {
-    "saghent/blink.cmp",
+    "saghen/blink.cmp",
     opts = {
       completion = {
         ghost_text = {
