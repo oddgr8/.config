@@ -6,9 +6,9 @@ return {
     end,
     lazy = false,
     keys = {
-      { "<leader>ac", "<cmd>Augment chat<cr>", desc = "Augment chat" },
-      { "<leader>an", "<cmd>Augment chat-new<cr>", desc = "Augment chat-new" },
-      { "<leader>at", "<cmd>Augment chat-toggle<cr>", desc = "Augment chat-toggle" },
+      { "<leader>ac", mode = { "n", "v" }, "<cmd>Augment chat<cr>", desc = "Augment chat" },
+      { "<leader>an", mode = { "n", "v" }, "<cmd>Augment chat-new<cr>", desc = "Augment chat-new" },
+      { "<leader>at", mode = { "n", "v" }, "<cmd>Augment chat-toggle<cr>", desc = "Augment chat-toggle" },
     },
   },
   {
