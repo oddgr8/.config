@@ -26,6 +26,14 @@ config.window_padding = {
 }
 config.color_scheme = "Catppuccin Mocha"
 
+config.keys = {
+	{
+		key = "t",
+		mods = "SUPER",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+}
+
 config.native_macos_fullscreen_mode = true
 
 -- Finally, return the configuration to wezterm:
