@@ -38,4 +38,5 @@ zvm_after_init_commands+=('source <(fzf --zsh)')
 
 # Setup aliases
 alias ls="lsd"
+alias h="head -n" # Useful for $ some_command | h 10
 
