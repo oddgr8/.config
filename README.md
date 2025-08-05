@@ -1,3 +1,13 @@
+# Configs and dotfiles
+
+<!--toc:start-->
+- [MacOS](#macos)
+- [Terminal emulator setup](#terminal-emulator-setup)
+- [Shell setup](#shell-setup)
+- [Tmux](#tmux)
+- [Lazyvim](#lazyvim)
+<!--toc:end-->
+
 All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os/macos/), [wezterm](https://wezfurlong.org/wezterm/), [lazyvim](https://www.lazyvim.org) and [tmux](https://github.com/tmux/tmux/wiki). Most things should work in Ubuntu also.
 
 ## MacOS
@@ -32,9 +42,9 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   ```
 
   **Reminder**:
-  - `.zshenv`: Runs _first_ in *all* shells. Set base variable here, like [XDG Base Variables](https://specifications.freedesktop.org/basedir-spec/latest/)
-  - `.zshrc`: Runs in *interactive* shells. These are shells you can type commands into.
-  - `.zprofile`: : Runs in *login* shells. These are shells in _new_ terminals.
+  - `.zshenv`: Runs _first_ in _all_ shells. Set base variable here, like [XDG Base Variables](https://specifications.freedesktop.org/basedir-spec/latest/)
+  - `.zshrc`: Runs in _interactive_ shells. These are shells you can type commands into.
+  - `.zprofile`: : Runs in _login_ shells. These are shells in _new_ terminals.
   Set `PATH` in `.zprofile`, **not** `.zshrc`, to avoid inconsistencies between parent and child shells. Typical entry you want in `.zprofile`:
 
   ```
