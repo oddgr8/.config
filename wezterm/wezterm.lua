@@ -12,9 +12,11 @@ config.background = {
 		source = { Color = "black" },
 	},
 	{
-		source = { File = os.getenv("HOME") .. "/.config/Background.jpeg" },
+		source = { File = (os.getenv("XDG_CONFIG_HOME") or os.getenv("HOME") .. "/.config") .. "/Background.jpeg" },
 		-- opacity = 0.05,
 		hsb = { brightness = 0.05 },
+		height = "100%",
+		width = "100%",
 	},
 }
 config.hide_tab_bar_if_only_one_tab = true
