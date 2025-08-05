@@ -2,8 +2,8 @@
 
 <!--toc:start-->
 - [MacOS](#macos)
-- [Terminal emulator setup](#terminal-emulator-setup)
-- [Shell setup](#shell-setup)
+- [Terminal emulator](#terminal-emulator)
+- [Shell setup](#shell)
 - [Tmux](#tmux)
 - [Lazyvim](#lazyvim)
 <!--toc:end-->
@@ -53,12 +53,12 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
 
 - Install and enable [Karabiner](https://karabiner-elements.pqrs.org). Caps lock is now Escape when pressed alone and Control when pressed with other keys.
 
-## Terminal emulator setup
+## Terminal emulator
 
 - Install and run [wezterm](https://wezfurlong.org/wezterm/)
 - Config should automatically be loaded from the repo
 
-## Shell setup
+## Shell
 
 - Install [oh-my-zsh](https://ohmyz.sh/)
 
