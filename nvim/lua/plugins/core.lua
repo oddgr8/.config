@@ -16,6 +16,7 @@ return {
     opts = {
       spec = {
         { "<leader>a", desc = "+Augment" },
+        { "gF", desc = "Go to location under cursor" },
       },
     },
   },
