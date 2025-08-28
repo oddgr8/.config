@@ -92,14 +92,12 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
 
-- Install [lsd](https://github.com/lsd-rs/lsd), [ripgrep](https://github.com/BurntSushi/ripgrep), [zoxide](https://github.com/ajeetdsouza/zoxide), [fd](https://github.com/sharkdp/fd), [bat](https://github.com/sharkdp/bat) and [delta](https://github.com/dandavison/delta). The version of `bat` has to exactly match the one being used by `git-delta`
+- Install [lsd](https://github.com/lsd-rs/lsd), [ripgrep](https://github.com/BurntSushi/ripgrep), [zoxide](https://github.com/ajeetdsouza/zoxide) and [fd](https://github.com/sharkdp/fd).
 
   ```
-  cargo install --locked lsd ripgrep zoxide fd-find git-delta@0.18.2 bat@0.24.0
+  cargo install --locked lsd ripgrep zoxide fd-find
   ```
   
-  You might have to run `bat cache --clear && bat cache --build` for everything to work properly
-
 - Install [powerlevel10k](https://github.com/romkatv/powerlevel10k) and zsh plugins.
 
   ```
