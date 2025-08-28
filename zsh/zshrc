@@ -10,6 +10,9 @@ fi
 # Another reminder to manipulate $PATH in .zprofile and not here.
 # See README for why.
 
+# Set man pager to nvim
+export MANPAGER="nvim +Man!"
+
 # Directory containing this file
 SRC_DIR=${${(%):-%x}:A:h}
 
