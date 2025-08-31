@@ -18,26 +18,26 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   - Disable "Automatically rearrange spaces based on most recent use"
 - Install homebrew
 
-  ```
+  ```sh
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   ```
 
 - Install the font
 
-  ```
+  ```sh
   brew install font-fira-code
   ```
 
 - Clone this repo locally in `~/.config`. You might want to backup existing configs
 
-  ```
+  ```sh
   git clone https://github.com/oddgr8/.config.git ~/.config
   ```
 
 - Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and set it to default.
 - Add this to `~/.zshenv` so configs are picked up correctly.
 
-  ```
+  ```sh
   export XDG_CONFIG_HOME=$HOME/.config
   ```
 
@@ -47,7 +47,7 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
   - `.zprofile`: : Runs in _login_ shells. These are shells in _new_ terminals.
   Set `PATH` in `.zprofile`, **not** `.zshrc`, to avoid inconsistencies between parent and child shells. Typical entry you want in `.zprofile`:
 
-  ```
+  ```sh
   export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH 
   ```
 
@@ -62,47 +62,47 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
 
 - Install [oh-my-zsh](https://ohmyz.sh/)
 
-  ```
+  ```sh
   sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
   ```
 
 - This probably modified your `.zshrc` file. Revert it
 
-  ```
+  ```sh
   cp .zshrc.pre-oh-my-zsh .zshrc
   rm .zshrc.pre-oh-my-zsh
   ```
 
 - Instead, add this to the top of your `zshrc`. This might cause some warnings but they should resolve once you install all further packages.
 
-  ```
+  ```sh
   # Load theme, plugins and aliases
   source $HOME/.config/zsh/zshrc
   ```
 
 - Install [tmux](https://github.com/tmux/tmux/wiki), [make](https://www.gnu.org/software/make/manual/make.html), [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/) and [fzf](https://junegunn.github.io/fzf/)
 
-  ```
+  ```sh
   brew install tmux make curl wget fzf 
   ```
 
 - Install [rust](https://www.rust-lang.org)
 
-  ```
+  ```sh
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
 
-- Install [lsd](https://github.com/lsd-rs/lsd), [ripgrep](https://github.com/BurntSushi/ripgrep), [zoxide](https://github.com/ajeetdsouza/zoxide), [fd](https://github.com/sharkdp/fd), [bat](https://github.com/sharkdp/bat) and [delta](https://github.com/dandavison/delta). The version of `bat` has to exactly match the one being used by `git-delta`
+- Install [lsd](https://github.com/lsd-rs/lsd), [ripgrep](https://github.com/BurntSushi/ripgrep), [zoxide](https://github.com/ajeetdsouza/zoxide), [fd](https://github.com/sharkdp/fd), [du-dust](https://github.com/bootandy/dust), [procs](https://github.com/dalance/procs), [bat](https://github.com/sharkdp/bat) and [delta](https://github.com/dandavison/delta). The version of `bat` has to exactly match the one being used by `git-delta`
 
-  ```
-  cargo install --locked lsd ripgrep zoxide fd-find git-delta@0.18.2 bat@0.24.0
+  ```sh
+  cargo install --locked lsd ripgrep zoxide fd-find du-dust procs git-delta@0.18.2 bat@0.24.0
   ```
   
   You might have to run `bat cache --clear && bat cache --build` for everything to work properly
 
 - Install [powerlevel10k](https://github.com/romkatv/powerlevel10k) and zsh plugins.
 
-  ```
+  ```sh
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
@@ -117,14 +117,14 @@ All my configs and steps to get going. Based on [MacOS](https://www.apple.com/os
 
 - Install [tmux](https://github.com/tmux/tmux/wiki)
 
-  ```
+  ```sh
   brew install tmux
   ```
 
 - Config should automatically be loaded from the repo
 - Install [TPM](https://github.com/tmux-plugins/tpm)
 
-  ```
+  ```sh
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ```
 
