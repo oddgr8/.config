@@ -85,11 +85,12 @@ also.
 
 - Install [tmux](https://github.com/tmux/tmux/wiki),
   [make](https://www.gnu.org/software/make/manual/make.html),
+  [lazygit](https://github.com/jesseduffield/lazygit),
   [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/) and
   [fzf](https://junegunn.github.io/fzf/).
 
   ```sh
-  brew install tmux make curl wget fzf
+  brew install tmux make lazygit curl wget fzf
   ```
 
 - Install [rust](https://www.rust-lang.org).
