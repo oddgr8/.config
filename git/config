@@ -9,3 +9,10 @@
 [include]
     # Use the delta diff viewer
     path = delta.gitconfig
+[diff]
+    tool = nvimdiff
+[merge]
+    tool = nvimdiff
+[mergetool]
+    keepBackup = false
+    prompt = false
