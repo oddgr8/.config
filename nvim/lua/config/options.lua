@@ -7,3 +7,5 @@ vim.g.loaded_netrwPlugin = 1
 -- set wrap
 vim.opt.wrap = true
 vim.opt.breakindent = true
+vim.opt.linebreak = true
+vim.opt.showbreak = "↪"
