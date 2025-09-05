@@ -4,3 +4,6 @@
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+-- set wrap
+vim.opt.wrap = true
+vim.opt.breakindent = true
