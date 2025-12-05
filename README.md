@@ -66,16 +66,10 @@ also.
 - Install [oh-my-zsh](https://ohmyz.sh/).
 
   ```sh
-  sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
+  KEEP_ZSHRC=yes RUNZSH=no sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
   ```
 
-  This probably modified your `.zshrc` file. Revert it.
-
-  ```sh
-  mv .zshrc.pre-oh-my-zsh .zshrc
-  ```
-
-  Instead, add this to the top of your `zshrc`. This might cause some warnings
+- Add this to the top of your `zshrc`. This might cause some warnings
   but they should resolve once you install all further packages.
 
   ```sh
