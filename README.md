@@ -1,12 +1,15 @@
 # Configs and dotfiles
 
 All my configs and steps to get going. Based on
-[MacOS](https://www.apple.com/os/macos/),
-[wezterm](https://wezfurlong.org/wezterm/), [lazyvim](https://www.lazyvim.org)
+[wezterm](https://wezfurlong.org/wezterm/),
+[zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH),
+[lazyvim](https://www.lazyvim.org)
 and [tmux](https://github.com/tmux/tmux/wiki). Most things should work in Ubuntu
 also.
 
 ## MacOS
+
+Should run fine with minor modifications for Ubuntu.
 
 - System Settings > Desktop and Dock >
   - Disable "Show recent applications in dock"
@@ -19,24 +22,17 @@ also.
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   ```
 
-- Clone this repo locally in `~/.config`. You might want to backup existing
-  configs.
+- Install the [font](https://github.com/tonsky/FiraCode) and [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
 
   ```sh
-  git clone https://github.com/oddgr8/.config.git ~/.config
+  brew install font-fira-code zsh
   ```
 
-- Install and enable [Karabiner](https://karabiner-elements.pqrs.org). Caps lock
-  is now Escape when pressed alone and Control when pressed with other keys.
+- Install and enable [Karabiner](https://karabiner-elements.pqrs.org). After config is loaded Caps lock
+  will be Escape when pressed alone and Control when pressed with other keys.
 
-- Install the font.
+## Shell
 
-  ```sh
-  brew install font-fira-code
-  ```
-
-- Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and set
-  it to default.
 - Add this to `~/.zshenv` so configs are picked up correctly.
 
   ```sh
@@ -47,21 +43,33 @@ also.
   - `.zshenv`: Runs _first_ in _all_ shells. Set base variable here, like
     [XDG Base Variables](https://specifications.freedesktop.org/basedir-spec/latest/)
   - `.zshrc`: Runs in _interactive_ shells. These are shells you can type
-    commands into.
+    commands into. Every sub-shell will invoke this.
   - `.zprofile`: : Runs in _login_ shells. These are shells in _new_ terminals.
     Set `PATH` in `.zprofile`, **not** `.zshrc`, to avoid inconsistencies
-    between parent and child shells. Typical entry you want in `.zprofile`:
+    between parent and child shells.
+
+- Restart terminal
+
+- Clone this repo. You might want to backup existing configs.
+  Restarting terminal might show some errors as all things are not yet installed.
 
   ```sh
-  export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
+  git clone https://github.com/oddgr8/.config.git $XDG_CONFIG_HOME
   ```
 
-## Terminal emulator
+## Shell and tmux
 
-- Install and run [wezterm](https://wezfurlong.org/wezterm/).
-- Config should automatically be loaded from the repo.
+- Install [tmux](https://github.com/tmux/tmux/wiki),
+  [make](https://www.gnu.org/software/make/manual/make.html),
+  [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/).
 
-## Shell
+  ```sh
+  brew install tmux make curl wget # MacOS
+  apt install tmux make curl wget # ubuntu
+  ```
+
+- Install [lazygit](https://github.com/jesseduffield/lazygit) and
+  [fzf](https://junegunn.github.io/fzf/)
 
 - Install [oh-my-zsh](https://ohmyz.sh/).
 
@@ -75,16 +83,6 @@ also.
   ```sh
   # Load theme, plugins and aliases
   source $HOME/.config/zsh/zshrc
-  ```
-
-- Install [tmux](https://github.com/tmux/tmux/wiki),
-  [make](https://www.gnu.org/software/make/manual/make.html),
-  [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/),
-  [lazygit](https://github.com/jesseduffield/lazygit) and
-  [fzf](https://junegunn.github.io/fzf/).
-
-  ```sh
-  brew install tmux make curl wget lazygit fzf
   ```
 
 - Install [rust](https://www.rust-lang.org).
@@ -110,37 +108,34 @@ also.
   You might have to run `bat cache --clear && bat cache --build` for everything
   to work properly.
 
-- Install [powerlevel10k](https://github.com/romkatv/powerlevel10k) and zsh
+- Install [TPM](https://github.com/tmux-plugins/tpm),
+  [powerlevel10k](https://github.com/romkatv/powerlevel10k) and zsh
   plugins.
 
   ```sh
+  # TPM
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+  # p10k
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+  # zsh plugins
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
   git clone https://github.com/jeffreytse/zsh-vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-vi-mode
   git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
   git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
   ```
+  
+- Config should automatically be loaded from the repo
 
-- Restart Terminal
-
-## Tmux
-
-- Install [tmux](https://github.com/tmux/tmux/wiki).
-
-  ```sh
-  brew install tmux
-  ```
-
-- Config should automatically be loaded from the repo.
-- Install [TPM](https://github.com/tmux-plugins/tpm).
-
-  ```sh
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  ```
-
-- Finish setup by pressing `Ctrl+A I` inside tmux. Might take a few seconds to
+- Open tmux and press `Ctrl+A I` inside it. Might take a few seconds to
   take effect.
+
+## Terminal emulator
+
+- Install and run [wezterm](https://wezfurlong.org/wezterm/).
+- Config should automatically be loaded from the repo
 
 ## Lazyvim
 
