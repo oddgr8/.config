@@ -141,3 +141,9 @@ Should run fine with minor modifications for Ubuntu.
 
 - Install [Lazyvim](https://www.lazyvim.org)
 - Config should automatically be loaded from the repo
+
+## Additional useful packages
+
+- Install python3-venv
+- Install [Golang](https://go.dev/dl/)
+- Install [NVM](https://github.com/nvm-sh/nvm) and Node.js LTS
