@@ -31,7 +31,7 @@ Should run fine with minor modifications for Ubuntu.
 - Install and enable [Karabiner](https://karabiner-elements.pqrs.org). After config is loaded Caps lock
   will be Escape when pressed alone and Control when pressed with other keys.
 
-## Shell
+## Shell and tmux
 
 - Add this to `~/.zshenv` so configs are picked up correctly.
 
@@ -57,8 +57,6 @@ Should run fine with minor modifications for Ubuntu.
   git clone https://github.com/oddgr8/.config.git $XDG_CONFIG_HOME
   ```
 
-## Shell and tmux
-
 - Install [tmux](https://github.com/tmux/tmux/wiki),
   [make](https://www.gnu.org/software/make/manual/make.html),
   [curl](https://curl.se), [wget](https://www.gnu.org/software/wget/).
@@ -75,14 +73,6 @@ Should run fine with minor modifications for Ubuntu.
 
   ```sh
   KEEP_ZSHRC=yes RUNZSH=no sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
-  ```
-
-- Add this to the top of your `zshrc`. This might cause some warnings
-  but they should resolve once you install all further packages.
-
-  ```sh
-  # Load theme, plugins and aliases
-  source $HOME/.config/zsh/zshrc
   ```
 
 - Install [rust](https://www.rust-lang.org).
@@ -126,8 +116,15 @@ Should run fine with minor modifications for Ubuntu.
   git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/alias-tips
   git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
   ```
-  
-- Config should automatically be loaded from the repo
+
+- Add this to the top of your `zshrc`
+
+  ```sh
+  # Load theme, plugins and aliases
+  source $HOME/.config/zsh/zshrc
+  ```
+
+- Restart Terminal
 
 - Open tmux and press `Ctrl+A I` inside it. Might take a few seconds to
   take effect.
