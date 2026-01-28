@@ -1,18 +1,75 @@
 [core]
     editor = nvim
-[alias]
-    lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
-    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-    lg3 = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    lg = lg1
+    excludesfile = ~/.gitignore
 
-[include]
-    # Use the delta diff viewer
-    path = delta.gitconfig
+[init]
+    defaultBranch = main
+
+[help]
+    autocorrect = prompt
+
+# --- Workflow & Sorting ---
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
+[commit]
+    verbose = true
+
+# --- Diff & Merge ---
+
 [diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
     tool = nvimdiff
+
 [merge]
     tool = nvimdiff
+    conflictstyle = zdiff3
+
 [mergetool]
     keepBackup = false
     prompt = false
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+# --- Remote Operations ---
+
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+
+[pull]
+    rebase = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
+# --- UI & Aliases ---
+
+[column]
+    ui = auto
+
+[include]
+    path = delta.gitconfig
+
+[alias]
+    lg = lg1
+    lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    lg3 = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
