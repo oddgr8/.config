@@ -1,12 +1,12 @@
 [include]
     path = catppuccin.gitconfig
 [core]
-    pager = delta
+    pager = [ "${COLUMNS}" -ge 160 ] && delta --side-by-side || delta
 [interactive]
     diffFilter = delta --color-only
 [delta]
     navigate = true    # use n and N to move between diff sections
     line-numbers = true
     hyperlinks = true
-    side-by-side = true
+    side-by-side = false
     features = catppuccin-mocha
