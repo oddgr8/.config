@@ -1,7 +1,7 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --hunk-header-style "" --file-decoration-style "ol" --merge-conflict-ours-diff-header-decoration-style "" --merge-conflict-theirs-diff-header-decoration-style ""
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --hunk-header-style "" --file-decoration-style "ol" --merge-conflict-ours-diff-header-decoration-style "" --merge-conflict-theirs-diff-header-decoration-style ""
 
 
 gui:
@@ -25,6 +25,5 @@ gui:
       - '#cdd6f4'
     searchingActiveBorderColor:
       - '#f9e2af'
-
   authorColors:
     '*': '#b4befe'
