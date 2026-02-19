@@ -136,7 +136,7 @@ Should run fine with minor modifications for Ubuntu.
 
 ## Lazyvim
 
-- Install [Lazyvim](https://www.lazyvim.org)
+- Install prerequisites for [Lazyvim](https://www.lazyvim.org) including [Neovim](https://neovim.io)
 - Config should automatically be loaded from the repo
 
 ## Additional useful packages
