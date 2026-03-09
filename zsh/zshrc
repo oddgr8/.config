@@ -48,8 +48,27 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Setup completions
 eval "$(zoxide init zsh)"
+
+# Configure fzf to use zoxide for Alt+C directory navigation
+export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --exclude .git"
+export FZF_ALT_C_OPTS="--preview 'lsd --tree --depth 2 --color=always {}'"
+
 # Avoid conflicts in fzf completion and zsh-vi-mode
-zvm_after_init_commands+=('source <(fzf --zsh)')
+# Also override fzf-cd-widget after fzf initialization to use zoxide
+zvm_after_init_commands+=(
+  'source <(fzf --zsh)'
+  'fzf-cd-widget-with-zoxide() {
+    local dir
+    dir=$(eval "$FZF_ALT_C_COMMAND" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --bind=ctrl-z:ignore ${FZF_DEFAULT_OPTS-} ${FZF_ALT_C_OPTS-}" $(__fzfcmd) +m)
+    if [[ -n "$dir" ]]; then
+      BUFFER="z ${(q)dir}"
+      zle accept-line
+    fi
+    zle reset-prompt
+  }
+  zle -N fzf-cd-widget-with-zoxide
+  bindkey '\''\ec'\'' fzf-cd-widget-with-zoxide'
+)
 
 # Setup aliases
 alias ls="lsd"
