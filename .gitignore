@@ -1,2 +1,23 @@
 go/
 nvm/
+
+# Karabiner automatic backups
+karabiner/automatic_backups/
+
+# Log files
+*.log
+
+# macOS system files
+.DS_Store
+
+# Vim swap files
+*.swp
+*.swo
+*~
+
+# Neovim data files (if accidentally placed in config)
+*.shada
+
+# Temporary files
+.tmp/
+tmp/

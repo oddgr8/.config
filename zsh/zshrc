@@ -17,8 +17,13 @@ export MANPAGER="nvim +Man!"
 SRC_DIR=${${(%):-%x}:A:h}
 
 # Increase the size of shell history stored in $HISTFILE.
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
 export HISTSIZE=100000
 export SAVEHIST=100000
+# History deduplication options
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
 
 # Set theme and config
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -34,6 +39,9 @@ source $ZSH/oh-my-zsh.sh
 # Set theme for zsh fast-syntax-highlighting
 fast-theme -q XDG:catppuccin-mocha
 
+# Optimize autosuggestions for better performance and quality
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_USE_ASYNC=true
 # Disable autosuggestions during paste to improve paste performance
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 pasteinit() {
@@ -52,6 +60,12 @@ eval "$(zoxide init zsh)"
 # Configure fzf to use zoxide for Alt+C directory navigation
 export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --exclude .git"
 export FZF_ALT_C_OPTS="--preview 'lsd --tree --depth 2 --color=always {}'"
+
+# FZF default options with Catppuccin Mocha theme
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --inline-info \
+  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 # Avoid conflicts in fzf completion and zsh-vi-mode
 # Also override fzf-cd-widget after fzf initialization to use zoxide
